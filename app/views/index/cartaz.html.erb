@@ -1,0 +1,98 @@
+<div id="cartaz" class="container">
+  
+<% if @filmes.count == 0 %>
+    <h4><em>Sem filmes em cartaz disponíveis <i class="far fa-sad-tear"></i></em></h4>
+<% end %>
+
+<% list=0 %>
+<% breve=0 %>
+<% @filmes.each do |filme| %>
+    <% if filme.listagem=='listado' %>
+        <% list+=1 %>
+    <% elsif filme.listagem=='em breve' %>
+        <% breve+=1 %>
+    <% end %>
+<% end %>
+
+<% if list>0 %>
+    <h3 class="gradient">Em Cartaz Nas Telinhas</h3>
+<% end %>
+
+<% i=0 %>
+<% j=0 %>
+<% @filmes.each do |filme| %>
+    <% j+=1 %>
+    <% if filme.listagem=='listado' %>
+        <% i+=1 %>
+        <% if i%4==1 %>
+            <div class="row">
+        <% end %>
+                <div class="col-3">
+                    <%= link_to filme do %>
+                        <div class="filme">
+                            <div class="capa">
+                                <%= image_tag filme.cartaz %>
+                            </div>
+                            <div class="info">
+                                <b><u><%= filme.nome %></u></b>
+                                <br>
+                                <b>Direção:</b> <%= filme.diretor %>
+                                <br>
+                                <b>Gênero:</b> <%= filme.tipo %>
+                                <br>
+                                <b>Duração:</b> <%= filme.duracao %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+        <% if i%4==0 %>
+            </div>
+        <% end %>
+    <% end %>
+    <% if j==@filmes.count %>
+        </div>
+    <% end %>
+<% end %>
+
+
+<% if breve>0 %>
+    <h3 class="gradient">E Em Breve!</h3>
+<% end %>
+
+<% i=0 %>
+<% j=0 %>
+<% @filmes.each do |filme| %>
+    <% j+=1 %>
+    <% if filme.listagem=='em breve' %>
+        <% i+=1 %>
+        <% if i%4==1 %>
+            <div class="row">
+        <% end %>
+            <div class="col-3">
+                <%= link_to filme do %>
+                    <div class="filme">
+                        <div class="capa">
+                            <%= image_tag filme.cartaz %>
+                        </div>
+                        <div class="info">
+                            <b><u><%= filme.nome %></u></b>
+                            <br>
+                            <b>Direção:</b> <%= filme.diretor %>
+                            <br>
+                            <b>Gênero:</b> <%= filme.tipo %>
+                            <br>
+                            <b>Duração:</b> <%= filme.duracao %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        <% if i%4==0 %>
+            </div>
+        <% end %>
+    <% end %>
+    <% if j==@filmes.count %>
+        </div>
+    <% end %>
+<% end %>
+  
+</div> <!--fim div cartaz-->

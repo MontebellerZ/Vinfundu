@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sessao:</strong>
+  <%= @ingresso.sessao_id %>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @ingresso.cliente %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @ingresso.tipo %>
+</p>
+
+<%= link_to 'Edit', edit_ingresso_path(@ingresso) %> |
+<%= link_to 'Back', ingressos_path %>

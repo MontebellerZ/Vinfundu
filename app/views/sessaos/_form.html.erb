@@ -1,0 +1,52 @@
+<%= form_for(sessao) do |f| %>
+  <% if sessao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sessao.errors.count, "error") %> prohibited this sessao from being saved:</h2>
+
+      <ul>
+      <% sessao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cinema_id %>
+    <%= f.number_field :cinema_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :filme_id %>
+    <%= f.number_field :filme_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :inicio %>
+    <%= f.text_field :inicio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sala %>
+    <%= f.number_field :sala %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo %>
+    <%= f.text_field :tipo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cadeiras %>
+    <%= f.number_field :cadeiras %>
+  </div>
+
+  <div class="field">
+    <%= f.label :valor %>
+    <%= f.text_field :valor %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<h2>Todos os filmes</h2>
+
+<h4>Procurar por nome:</h4>
+
+    <%= form_tag(filmes_path, method: :get) do %>
+        <%= text_field_tag(:search, params[:search]) %>
+        <%= submit_tag("Search") %>
+    <% end %>
+    
+    <% @procurar.each do |filme| %>
+        <ul>
+            <li>
+                <%= link_to filme.nome, filme %>
+            </li>
+        </ul>
+    <% end %>

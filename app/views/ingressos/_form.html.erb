@@ -1,0 +1,32 @@
+<%= form_for(ingresso) do |f| %>
+  <% if ingresso.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ingresso.errors.count, "error") %> prohibited this ingresso from being saved:</h2>
+
+      <ul>
+      <% ingresso.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sessao_id %>
+    <%= f.number_field :sessao_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cliente %>
+    <%= f.text_field :cliente %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo %>
+    <%= f.text_field :tipo %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,45 @@
+<div id="reclamacao" class="container">
+    <h3>Mande Sua Mensagem!</h3>
+    
+    <%= form_for(@reclamacao) do |f| %>
+    
+        <div class="field">
+            <%= f.label :nome %>
+            <%= f.text_field :nome %>
+        </div>
+        
+        <div class="field">
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+        </div>
+        
+        <div class="field">
+            <%= f.label :cinema_id %>
+            <% cinema_array = Cinema.all.map { |cinema| [cinema.nome, cinema.id] } %>
+            <%= f.select(:cinema_id, options_for_select(cinema_array)) %>
+        </div>
+        
+        <div class="field">
+            <%= f.label :mensagem %>
+            <%= f.text_area :mensagem %>
+        </div>
+        
+        <div class="actions">
+            <%= f.submit "Enviar", :id => "enviar" %>
+        </div>
+    <% end %>
+    
+    <p id="notice"><%= notice %></p>
+    
+    <div class="row">
+        <div class="col">
+            <h5><i class="fas fa-envelope"></i> montebellerrocha@gmail.com</h5>
+        </div>
+        <div class="col">
+            <h5><i class="fas fa-envelope"></i> lindemannlilith@gmail.com</h5>
+        </div>
+        <div class="col">
+            <h5><i class="fas fa-envelope"></i> nizandrapauls@gmail.com</h5>
+        </div>
+    </div>
+</div>

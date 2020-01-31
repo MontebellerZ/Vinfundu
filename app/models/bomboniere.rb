@@ -1,0 +1,2 @@
+class Bomboniere < ApplicationRecord
+end

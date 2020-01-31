@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Produto:</strong>
+  <%= @bomboniere.produto %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @bomboniere.valor %>
+</p>
+
+<p>
+  <strong>Imagem:</strong>
+  <%= @bomboniere.imagem %>
+</p>
+
+<p>
+  <strong>Limitado:</strong>
+  <%= @bomboniere.limitado %>
+</p>
+
+<%= link_to 'Edit', edit_bomboniere_path(@bomboniere) %> |
+<%= link_to 'Back', bombonieres_path %>

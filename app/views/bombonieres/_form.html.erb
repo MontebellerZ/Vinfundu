@@ -1,0 +1,37 @@
+<%= form_for(bomboniere) do |f| %>
+  <% if bomboniere.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bomboniere.errors.count, "error") %> prohibited this bomboniere from being saved:</h2>
+
+      <ul>
+      <% bomboniere.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :produto %>
+    <%= f.text_field :produto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :valor %>
+    <%= f.text_field :valor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :imagem %>
+    <%= f.text_field :imagem %>
+  </div>
+
+  <div class="field">
+    <%= f.label :limitado %>
+    <%= f.check_box :limitado %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

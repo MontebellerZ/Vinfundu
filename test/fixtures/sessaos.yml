@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cinema_id: 1
+  filme_id: 1
+  inicio: MyString
+  idade: 1
+  sala: 1
+  tipo: MyString
+  cadeiras: 1
+  valor: 9.99
+
+two:
+  cinema_id: 1
+  filme_id: 1
+  inicio: MyString
+  idade: 1
+  sala: 1
+  tipo: MyString
+  cadeiras: 1
+  valor: 9.99

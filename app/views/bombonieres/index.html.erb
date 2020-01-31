@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bombonieres</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Produto</th>
+      <th>Valor</th>
+      <th>Imagem</th>
+      <th>Limitado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bombonieres.each do |bomboniere| %>
+      <tr>
+        <td><%= bomboniere.produto %></td>
+        <td><%= bomboniere.valor %></td>
+        <td><%= bomboniere.imagem %></td>
+        <td><%= bomboniere.limitado %></td>
+        <td><%= link_to 'Show', bomboniere %></td>
+        <td><%= link_to 'Edit', edit_bomboniere_path(bomboniere) %></td>
+        <td><%= link_to 'Destroy', bomboniere, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bomboniere', new_bomboniere_path %>

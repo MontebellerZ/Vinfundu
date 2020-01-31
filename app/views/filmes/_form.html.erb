@@ -1,0 +1,67 @@
+<%= form_for(filme) do |f| %>
+  <% if filme.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(filme.errors.count, "error") %> prohibited this filme from being saved:</h2>
+
+      <ul>
+      <% filme.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo %>
+    <%= f.text_field :tipo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :duracao %>
+    <%= f.text_field :duracao %>
+  </div>
+
+  <div class="field">
+    <%= f.label :diretor %>
+    <%= f.text_field :diretor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :elenco %>
+    <%= f.text_field :elenco %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nacionalidade %>
+    <%= f.text_field :nacionalidade %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sinopse %>
+    <%= f.text_area :sinopse %>
+  </div>
+
+  <div class="field">
+    <%= f.label :trailer %>
+    <%= f.text_field :trailer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cartaz %>
+    <%= f.text_field :cartaz %>
+  </div>
+
+  <div class="field">
+    <%= f.label :listagem %>
+    <%= f.select :listagem, ['listado', 'não listado', 'indicacao', 'em breve'] %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

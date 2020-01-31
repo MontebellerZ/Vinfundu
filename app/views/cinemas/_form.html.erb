@@ -1,0 +1,27 @@
+<%= form_for(cinema) do |f| %>
+  <% if cinema.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cinema.errors.count, "error") %> prohibited this cinema from being saved:</h2>
+
+      <ul>
+      <% cinema.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :endereco %>
+    <%= f.text_field :endereco %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cinema:</strong>
+  <%= @sessao.cinema_id %>
+</p>
+
+<p>
+  <strong>Filme:</strong>
+  <%= @sessao.filme_id %>
+</p>
+
+<p>
+  <strong>Inicio:</strong>
+  <%= @sessao.inicio %>
+</p>
+
+<p>
+  <strong>Sala:</strong>
+  <%= @sessao.sala %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @sessao.tipo %>
+</p>
+
+<p>
+  <strong>Cadeiras:</strong>
+  <%= @sessao.cadeiras %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @sessao.valor %>
+</p>
+
+<%= link_to 'Edit', edit_sessao_path(@sessao) %> |
+<%= link_to 'Back', sessaos_path %>

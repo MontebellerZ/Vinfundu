@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  tipo: MyString
+  duracao: MyString
+  diretor: MyString
+  elenco: MyString
+  nacionalidade: MyString
+  sinopse: MyText
+  trailer: MyString
+  cartaz: MyString
+
+two:
+  nome: MyString
+  tipo: MyString
+  duracao: MyString
+  diretor: MyString
+  elenco: MyString
+  nacionalidade: MyString
+  sinopse: MyText
+  trailer: MyString
+  cartaz: MyString

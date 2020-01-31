@@ -1,0 +1,84 @@
+<div id="promo" class="container">
+  
+  <% if @promocaos.count != 0 %>
+    <h3 class="gradient">Promoções</h3>
+  
+    <% i=0 %>
+    <% @promocaos.each do |promocao| %>
+      <% i+=1 %>
+      <% if i%2==1 %>
+        <div class="row">
+      <% end %>
+          <div class="col">
+            <%= image_tag promocao.imagem %>
+          </div>
+      <% if i%2==0 %>
+        </div>
+      <% end %>
+    <% end %>
+    <% if  @promocaos.count%2==1 %>
+      </div>
+    <% end %>
+  <% end %>
+</div> <!--fim div promo-->
+
+
+
+<div id="destaque" class="container">
+  
+  <% j=0 %>
+  <% @filmes.each do |filme| %>
+    <% if filme.listagem=='indicacao' %>
+      <% j+=1 %>
+    <% end %>
+  <% end %>
+  
+  <% if j>0 %>
+    <h3 class="gradient">Pra Ver Em Casa!</h3>
+  <% end %>
+  
+  <% i=0 %>
+  <% @filmes.each do |filme| %>
+  
+    <% if filme.listagem=='indicacao' %>
+  
+      <% i+=1 %>
+      <% if i%2==1 %>
+      
+        <div class="row">
+          <div class="col-4">
+            <%= link_to (image_tag filme.cartaz), filme %>
+          </div>
+          <div class="col">
+            <h3><b><u><%= link_to filme.nome, filme %></u></b></h3>
+            <b>Direção:</b> <%= filme.diretor %> <b>| Duração</b> <%= filme.duracao %>
+            <br>
+            <b>Elenco:</b> <%= filme.elenco %>
+            <div class="sinopse">
+              <b>Sinopse:</b> <%= filme.sinopse %>
+            </div>
+          </div>
+        </div>
+        
+      <% else %>
+      
+        <div class="row">
+          <div class="col">
+            <h3><b><u><%= link_to filme.nome, filme %></u></b></h3>
+            <b>Direção:</b> <%= filme.diretor %> <b>| Duração</b> <%= filme.duracao %>
+            <br>
+            <b>Elenco:</b> <%= filme.elenco %>
+            <div class="sinopse">
+              <b>Sinopse:</b> <%= filme.sinopse %>
+            </div>
+          </div>
+          <div class="col-4">
+            <%= link_to (image_tag filme.cartaz), filme %>
+          </div>
+        </div>
+        
+      <% end %>
+    <% end %>
+  <% end %>
+  
+</div> <!--fim div destaque-->

@@ -1,0 +1,73 @@
+<div id="sobre" class="container" style="background-image: url(<%= @filme.cartaz %>);">
+  <div class="opacity">
+    <div class="row justify-content-center">
+      <div class="col-3">
+        <%= image_tag @filme.cartaz %>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-3">
+        <h2 class="titulo"><%= @filme.nome %></h2>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <div class="trailer">
+          <%= link_to @filme.trailer, target: "_blank" do %>
+            <i class="fab fa-youtube"></i> Trailer
+          <% end %>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-10 sinopse">
+        <h4><b>Sinopse</b></h4>
+        <%= @filme.sinopse %>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center sinopse">
+      <div class="col-3">
+        <h4><b>Detalhes</b></h4>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col">
+        <b>Direção:</b>
+        <br>
+        <%= @filme.diretor %>
+      </div>
+      <div class="col">
+        <b>Elenco:</b>
+        <br>
+        <%= @filme.elenco %>
+      </div>
+      <div class="col">
+        <b>Duração:</b>
+        <br>
+        <%= @filme.duracao %>
+      </div>
+      <div class="col">
+        <b>Gênero:</b>
+        <br>
+        <%= @filme.tipo %>
+      </div>
+      <div class="col">
+        <b>Nacionalidade:</b>
+        <br>
+        <%= @filme.nacionalidade %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="listagem">
+  <% if @filme.listagem=="listado" %>
+    Em Cartaz
+  <% elsif @filme.listagem=="indicacao" %>
+    Indicação Pra Ver Em Casa
+  <% end %>
+</div>

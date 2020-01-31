@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cinema_id: 1
+  produto: MyString
+  valor: 9.99
+
+two:
+  cinema_id: 1
+  produto: MyString
+  valor: 9.99

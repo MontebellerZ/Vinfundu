@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vinfundu</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  </head>
+
+  <body>
+    <div id="topo">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-4" id="logo">
+            <%= link_to image_tag("vinfundu.fw.png"), root_path %>
+          </div>
+          
+          <div class="col-2"></div>
+          
+          <div class="col lineheight">
+            <%= link_to "Em Cartaz", cartaz_path %>
+          </div>
+          
+          <div class="col lineheight">
+            <%= link_to "Sessões e Cinemas", sessoes_path %>
+          </div>
+          
+          <div class="col lineheight">
+            <%= link_to "Bomboniere", produtos_path %>
+          </div>
+          
+        </div>
+      </div>
+    </div> <!--fim div topo-->
+    
+    
+    
+    <%= yield %>
+    
+    <div id="talk">
+      <div>
+        Nos deixe uma mensagem!
+        <br>
+        <u><%= link_to "Clique Aqui", talk_path %></u>
+      </div>
+      <i class="fas fa-user-friends"></i>
+    </div>
+    
+    <div id="precos">
+      <div>
+        Tabela de Preços
+        <table>
+          <tr>
+            <th>2D</th>
+            <td>R$10,00</td>
+          </tr>
+          <tr>
+            <th>3D</th>
+            <td>R$15,00</td>
+          </tr>
+          <tr>
+            <th>XD</th>
+            <td>R$25,00</td>
+          </tr>
+        </table>
+      </div>
+      <i class="fas fa-money-bill-alt"></i>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        <div id="rodape" class="col-12">
+          © 2020 Vinfundu - Todos os Direitos Reservados.
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+    
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+    
+          // Store hash
+          var hash = this.hash;
+    
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+       
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+    </script>
+    
+  </body>
+</html>
