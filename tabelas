@@ -1,0 +1,61 @@
+bomboniere
+    produto
+    valor:decimal
+
+cinema
+    nome
+    endereco
+
+filme
+    nome
+    tipo
+    duracao
+    diretor
+    elenco
+    nacionalidade
+    sinopse:text
+    trailer
+    cartaz
+
+sessao
+    cinema_id:integer
+    filme_id:integer
+    inicio
+    sala:integer
+    tipo
+    cadeiras:integer
+    valor:decimal
+
+ingresso
+    sessao_id:integer
+    cliente
+    tipo
+    
+reclamacao
+    nome
+    email
+    cinema_id:integer
+    mensagem:text
+    
+indicacao
+    nome
+    tipo
+    duracao
+    diretor
+    elenco
+    nacionalidade
+    sinopse:text
+    trailer
+    cartaz
+    
+promocao
+    imagem
+    
+    
+
+              
+           cinema 1-N sessao 1-N ingresso           promocao
+              N          N
+              |          |                          
+              1          1                          
+         reclamacao    filme                        bomboniere
