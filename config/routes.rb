@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'sessoes', :to => 'index#sessoes'
   get 'produtos', :to => 'index#produtos'
   get 'talk', :to => 'index#talk'
+  get 'desenvolvedor', :to => 'index#desenvolvedor'
 
   resources :sessaos
   resources :filmes

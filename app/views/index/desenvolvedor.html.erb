@@ -1,0 +1,56 @@
+<div id="desenvolvedor">
+    
+    <p id="notice"><%= notice %></p>
+    
+    <h2>Bomboniere</h2>
+    
+    <div class="container dvvbomboniere">
+        <%= form_for(bomboniere) do |f| %>
+            <div class="row justify-content-start">
+                <div class="field">
+                    <%= f.label :produto %>
+                    <%= f.text_field :produto %>
+                </div>
+                
+                <div class="field">
+                    <%= f.label :valor %>
+                    <%= f.text_field :valor %>
+                </div>
+                
+                <div class="field">
+                    <%= f.label :imagem %>
+                    <%= f.text_field :imagem %>
+                </div>
+                
+                <div class="field">
+                    <%= f.label :limitado %>
+                    <%= f.check_box :limitado %>
+                </div>
+                
+                <div class="actions">
+                    <%= f.submit %>
+                </div>
+            </div>
+        <% end %>
+        
+        <% @bombonieres.each do |bomboniere| %>
+            <div class="row dvv justify-content-around">
+                <div class="col-1 indexdisplay">
+                    <%= image_tag bomboniere.imagem %>
+                </div>
+                <div class="col-2 indexdisplay">
+                    <%= bomboniere.produto %>
+                    <br>
+                    <%= bomboniere.valor %>
+                    <br>
+                    <%= bomboniere.limitado %>
+                </div>
+                <div class="col-1 indexdisplay">
+                    <td><%= link_to 'Edit', edit_bomboniere_path(bomboniere) %></td>
+                    <td><%= link_to 'Destroy', bomboniere, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    
+</div>
