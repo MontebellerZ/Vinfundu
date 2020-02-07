@@ -19,8 +19,8 @@
   <tbody>
     <% @sessaos.each do |sessao| %>
       <tr>
-        <td><%= sessao.cinema_id %></td>
-        <td><%= sessao.filme_id %></td>
+        <td><%= sessao.cinema.nome %></td>
+        <td><%= sessao.filme.nome %></td>
         <td><%= sessao.inicio %></td>
         <td><%= sessao.sala %></td>
         <td><%= sessao.tipo %></td>

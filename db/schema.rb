@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200127221313) do
+ActiveRecord::Schema.define(version: 20200207041258) do
 
   create_table "bombonieres", force: :cascade do |t|
     t.string   "produto"
@@ -28,12 +28,6 @@ ActiveRecord::Schema.define(version: 20200127221313) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "clientes", force: :cascade do |t|
-    t.bigint   "cpf"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "filmes", force: :cascade do |t|
     t.string   "nome"
     t.string   "tipo"
@@ -47,28 +41,6 @@ ActiveRecord::Schema.define(version: 20200127221313) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "listagem"
-  end
-
-  create_table "indicacaos", force: :cascade do |t|
-    t.string   "nome"
-    t.string   "tipo"
-    t.string   "duracao"
-    t.string   "diretor"
-    t.string   "elenco"
-    t.string   "nacionalidade"
-    t.text     "sinopse"
-    t.string   "trailer"
-    t.string   "cartaz"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  create_table "ingressos", force: :cascade do |t|
-    t.integer  "sessao_id"
-    t.string   "tipo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "cliente"
   end
 
   create_table "promocaos", force: :cascade do |t|
@@ -92,8 +64,6 @@ ActiveRecord::Schema.define(version: 20200127221313) do
     t.string   "inicio"
     t.integer  "sala"
     t.string   "tipo"
-    t.integer  "cadeiras"
-    t.decimal  "valor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,16 +1,89 @@
-<h2>Todos os filmes</h2>
+<div class="container" id="menusessao">
+    <div class="row justify-content-center">
+        <% if @cinemas.count>0 %>
+            <div class="col-2">
+                <%= link_to "Nossos Cinemas", :anchor => "cinemas" %>
+            </div>
+        <% end %>
+        <% if @sessaos.count>0 %>
+            <div class="col-2">
+                <%= link_to "Nossas Sessões", :anchor => "sessaos" %>
+            </div>
+        <% end %>
+    </div>
+</div>
 
-<h4>Procurar por nome:</h4>
+<% if @cinemas.count>0 %>
+    <div class="container" id=cinemas>
+        <% contador=@cinemas.count %>
+        
+        <% if contador%5==0 %>
+            <% numero=5 %>
+        <% elsif contador%4==0 %>
+            <% numero=4 %>
+        <% elsif contador%3==0 %>
+            <% numero=3 %>
+        <% elsif contador%2==0 %>
+            <% numero=2 %>
+        <% elsif contador==1 %>
+            <% numero=1 %>
+        <% else %>
+            <% numero=3 %>
+        <% end %>
+        
+        <h3>Nossos cinemas:</h3>
+        
+        <% i=0 %>
+        <% @cinemas.each do |cinema| %>
+            <% i+=1 %>
+            <% if i%numero==1 || numero==1 %>
+                <div class="row justify-content-center">
+            <% end %>
+                    <div class="col-2 local">
+                        <b><%= cinema.nome %></b>
+                        <br>
+                        <div><%= cinema.endereco %></div>
+                    </div>
+            <% if i%numero==0 || i==contador %>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+<% end %>
 
-    <%= form_tag(filmes_path, method: :get) do %>
-        <%= text_field_tag(:search, params[:search]) %>
-        <%= submit_tag("Search") %>
-    <% end %>
-    
-    <% @procurar.each do |filme| %>
-        <ul>
-            <li>
-                <%= link_to filme.nome, filme %>
-            </li>
-        </ul>
-    <% end %>
+<% if @sessaos.count>0 %>
+    <div id="sessaos">
+        
+        <h3>Todas as sessões:</h3>
+        
+        <% i=0 %>
+        <% @filmes.each do |filme| %>
+            <% if filme.sessaos.count>0 %>
+                <% i+=1 %>
+                
+                <div class="title container fundo">
+                    <div class="row justify-content-center">
+                        <div class="col-2"><%= image_tag filme.cartaz %></div>
+                        <div class="col-4" style="margin: auto 0; text-decoration: underline;"><h4><%= filme.nome %></h4></div>
+                    </div>
+                    <div class="row justify-content-center break">
+                        <% filme.sessaos.each do |sessao| %>
+                            <div class="col-2">
+                                <b>Cinema:</b> <%= sessao.cinema.nome %>
+                                <br>
+                                <b>Horario:</b> <%= sessao.inicio %>
+                                <br>
+                                <b>Tipo:</b> <%= sessao.tipo %>
+                                <br>
+                                <%= link_to sessao do %>
+                                    <div class="acesse">Acesse a Sessão!</div>
+                                <% end %>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+        
+    </div>
+<% end %>

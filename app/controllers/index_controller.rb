@@ -21,6 +21,5 @@ class IndexController < ApplicationController
     @cinemas = Cinema.all
     @sessaos = Sessao.all
     @filmes = Filme.all
-    
   end
 end

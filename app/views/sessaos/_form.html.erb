@@ -13,12 +13,14 @@
 
   <div class="field">
     <%= f.label :cinema_id %>
-    <%= f.number_field :cinema_id %>
+    <% cinema_array = Cinema.all.map { |cinema| [cinema.nome, cinema.id] } %>
+    <%= f.select(:cinema_id, options_for_select(cinema_array, :selected => f.object.cinema_id)) %>
   </div>
 
   <div class="field">
     <%= f.label :filme_id %>
-    <%= f.number_field :filme_id %>
+    <% filme_array = Filme.all.map { |filme| [filme.nome, filme.id] } %>
+    <%= f.select(:filme_id, options_for_select(filme_array, :selected => f.object.filme_id)) %>
   </div>
 
   <div class="field">
@@ -33,7 +35,7 @@
 
   <div class="field">
     <%= f.label :tipo %>
-    <%= f.text_field :tipo %>
+    <%= f.select :tipo, ['XD', '3D', '2D'] %>
   </div>
 
   <div class="field">

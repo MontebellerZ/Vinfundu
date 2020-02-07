@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'produtos', :to => 'index#produtos'
   get 'talk', :to => 'index#talk'
 
-  resources :ingressos
   resources :sessaos
   resources :filmes
   resources :bombonieres

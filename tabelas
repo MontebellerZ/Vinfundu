@@ -54,7 +54,7 @@ promocao
     
 
               
-           cinema 1-N sessao 1-N ingresso           promocao
+           cinema 1-N sessao                        promocao
               N          N
               |          |                          
               1          1                          
